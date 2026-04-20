@@ -99,8 +99,7 @@ public class RoomsController : ControllerBase
 
         if (room == null)
             return NotFound();
-
-        // simple conflict rule
+        
         if (DataStore.Reservations.Any(r => r.RoomId == id))
             return Conflict("Room has reservations");
 
